@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\FWLIB\inc;..\HARDWARE\fourG;..\HARDWARE\mqtt;..\HARDWARE\usart1;..\HARDWARE\usart2;..\HARDWARE\HMAC\inc;..\HARDWARE\key;..\HARDWARE\tim3;..\HARDWARE\tim4;..\HARDWARE\commu;..\HARDWARE\led</IncludePath>
+              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\FWLIB\inc;..\HARDWARE\fourG;..\HARDWARE\mqtt;..\HARDWARE\usart1;..\HARDWARE\usart2;..\HARDWARE\HMAC\inc;..\HARDWARE\key;..\HARDWARE\tim3;..\HARDWARE\tim4;..\HARDWARE\commu;..\HARDWARE\led;..\HARDWARE\gcan600</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -444,6 +444,11 @@
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\led\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>gcan600.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\gcan600\gcan600.c</FilePath>
             </File>
           </Files>
         </Group>
