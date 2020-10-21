@@ -15,7 +15,8 @@
 #include "led.h"        //包含需要的头文件
 #include "mqtt.h"       //包含需要的头文件
 #include "key.h"        //包含需要的头文件
-
+#include "stm32f4xx_gpio.h"
+#include "stm32f4xx_rcc.h"
 char fourG_mode = 0;     //联网模式 0：SSID和密码写在程序里   1：Smartconfig方式用APP发送
 	
 /*-------------------------------------------------*/

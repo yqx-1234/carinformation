@@ -35,3 +35,5 @@
 ..\obj\timer3.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\timer3.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\timer3.o: ..\HARDWARE\tim3\timer3.h
+..\obj\timer3.o: ..\HARDWARE\timer2\timer2.h
+..\obj\timer3.o: ..\SYSTEM\sys\sys.h

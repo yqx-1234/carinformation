@@ -12,6 +12,8 @@
 #include "timer4.h"
 #include "commu.h"
 #include "string.h"
+#include "stm32f4xx_gpio.h"
+#include "stm32f4xx_rcc.h"
 //ALIENTEK 探索者STM32F407开发板 实验1
 //跑马灯实验 -库函数版本
 //技术支持：www.openedv.com

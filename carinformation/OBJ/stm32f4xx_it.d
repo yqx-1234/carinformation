@@ -44,6 +44,7 @@
 ..\obj\stm32f4xx_it.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\usart2\usart2.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\tim4\timer4.h
+..\obj\stm32f4xx_it.o: ..\HARDWARE\timer2\timer2.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\fourG\fourG.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\tim3\timer3.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\led\led.h

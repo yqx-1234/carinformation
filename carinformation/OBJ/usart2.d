@@ -39,3 +39,5 @@
 ..\obj\usart2.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\usart2.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\usart2.o: ..\HARDWARE\tim4\timer4.h
+..\obj\usart2.o: ..\HARDWARE\timer2\timer2.h
+..\obj\usart2.o: ..\SYSTEM\sys\sys.h

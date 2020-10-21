@@ -48,4 +48,5 @@
 ..\obj\commu.o: ..\HARDWARE\key\key.h
 ..\obj\commu.o: ..\HARDWARE\tim3\timer3.h
 ..\obj\commu.o: ..\HARDWARE\tim4\timer4.h
+..\obj\commu.o: ..\HARDWARE\timer2\timer2.h
 ..\obj\commu.o: ..\HARDWARE\commu\commu.h
