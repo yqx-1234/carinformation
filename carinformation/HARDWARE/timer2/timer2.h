@@ -6,5 +6,5 @@
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_tim.h"
 #include "misc.h"
-void timer2_enable_5s(void);
+void timer2_Enable_5s(void);
 #endif
