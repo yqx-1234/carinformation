@@ -82,6 +82,22 @@ void USART2_IRQHandler(void)
 		}
 	}
 } 
+
+/*-------------------------------------------------*/
+/*函数名：串口3接收中断函数                        */
+/*参数：无                                         */
+/*返回值：无                                       */
+/*-------------------------------------------------*/
+void USART3_IRQHandler(void){
+	if(USART_GetITStatus(USART3,USART_IT_RXNE)!=RESET){
+		if(USART2->DR){
+			usart3_RxBuff[usart3_RxCounter]=USART3->DR;
+			usart3_RxCounter++;
+		}
+		
+	}
+	
+
 /*-------------------------------------------------*/
 /*函数名：定时器4中断服务函数                      */
 /*参  数：无                                       */
@@ -134,6 +150,87 @@ void TIM3_IRQHandler(void)
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);      //清除TIM3溢出中断标志 	
 	}
 }
+/*------------------------------------------*/
+/*函数名：定时器2中断服务函数*              */
+/*参数：无                                  */
+/*返回值：无                                */
+/*------------------------------------------*/
+void TIM2_IRQHandler(void){
+	u32 i=0;
+	u32 j=0;
+	if(TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET){   //如果TIM_IT_Update置位，表示TIM2溢出中断，进入if	  
+         u2_printf("ATPID=13\r\n");
+		      for(i=0;i<10000;i--)
+		          for(j=0;j<20000;j--);
+		     if(strstr(usart3_RxBuff,"PID13")){
+					 GCAN600_Data();
+				 }
+				 usart3_RxCounter=0;
+				  elseif(strstr(usart3_RxBuff,"PID05")==0){
+					 u2_printf("ATPID=47\r\n");
+				   for(i=0;i<10000;i--)
+				     for(j=0;j<20000;j--);
+				   if(strstr(usart3_RxBuff,"PID47")){
+					   GCAN600_Data();
+				   }
+				usart3_RxCounter=0;
+         }
+         else{
+            u1_printf("接收数据错误\r\n");	
+            data_flag=1;
+				usart3_RxCounter=0;
+         }				
+				 
+				 u2_printf("ATPID=05\r\n");
+				 for(i=0;i<10000;i--)
+				   for(j=0;j<20000;j--);
+				 if(strstr(usart3_RxBuff,"PID05")){
+					 GCAN600_Data();
+				 }
+				 usart3_RxCounter=0;
+				  elseif(strstr(usart3_RxBuf,"PID05")==0){
+					 u2_printf("ATPID=47\r\n");
+				   for(i=0;i<10000;i--)
+				     for(j=0;j<20000;j--);
+				   if(strstr(usart3_RxBuff,"PID47")){
+					   GCAN600_Data();
+				   }
+					 usart3_RxCounter=0;
+         }
+         else{
+            u1_printf("接收数据错误\r\n");	
+            data_flag=1;
+         }				
+				 
+				 u2_printf("ATPID=47\r\n");
+				 for(i=0;i<10000;i--)
+				   for(j=0;j<20000;j--);
+				 if(strstr(usart3_RxBuff,"PID47")){
+					 GCAN600_Data();
+				 }
+				 usart3_RxCounter=0;
+				 elseif(strstr(usart3_RxBuf,"PID05")==0){
+					 u2_printf("ATPID=47\r\n");
+				   for(i=0;i<10000;i--)
+				     for(j=0;j<20000;j--);
+				   if(strstr(usart3_RxBuff,"PID47")){
+					   GCAN600_Data();
+				   }
+					 usart3_RxCounter=0;
+         }
+         else{
+            u1_printf("接收数据错误\r\n");	
+            data_flag=1;
+					 usart3_RxCounter=0;
+         }					 
+					 
+			 }
+		 }
+
+
+
+
+
 /**
   * @brief  This function handles NMI exception.
   * @param  None

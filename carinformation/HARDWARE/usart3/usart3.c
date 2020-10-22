@@ -1,4 +1,13 @@
 #include "usart3.h"
+
+
+unsigned int Usart2_RxCounter = 0;      //定义一个变量，记录串口2总共接收了多少字节的数据
+char Usart2_RxBuff[USART3_RXBUFF_SIZE]; //定义一个数组，用于保存串口2接收到的数据
+/*---------------------------------------*/
+/*初始化串口2                            */
+/*函数名：usart3_Init(u32 bound)         */
+/*参数：无                               */
+/*---------------------------------------*/
 void usart3_Init(u32 bound){
    GPIO_InitTypeDef  GPIO_InitStructure;
 	 USART_InitTypeDef USART_InitStructure;
@@ -39,4 +48,28 @@ void usart3_Init(u32 bound){
 #endif
   USART_Cmd(USART3,ENABLE);//串口使能
 
+}
+
+/*---------------------------------------*/
+/*串口3打印函数                        */
+/*函数名：u3_printf(u32 bound)         */
+/*参数：无                               */
+/*---------------------------------------*/
+__align(8) char usart3_TxBuff[USART3_TXBUFF_SIZE]; 
+void u3_printf(char* fmt,...) 
+{  
+	unsigned int i,length;
+	
+	va_list ap;
+	va_start(ap,fmt);
+	vsprintf(usart3_TxBuff,fmt,ap);
+	va_end(ap);	
+	
+	length=strlen((const char*)usart3_TxBuff);		
+	while((USART3->SR&0X40)==0);
+	for(i = 0;i < length;i ++)
+	{			
+		USART3->DR = usart3_TxBuff[i];
+		while((USART2->SR&0X40)==0);	
+	}	
 }
