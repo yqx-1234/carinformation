@@ -1,7 +1,7 @@
 ..\obj\usart1.o: ..\HARDWARE\usart1\usart1.c
 ..\obj\usart1.o: ..\USER\stm32f4xx.h
 ..\obj\usart1.o: ..\CORE\core_cm4.h
-..\obj\usart1.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\usart1.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\usart1.o: ..\CORE\core_cmInstr.h
 ..\obj\usart1.o: ..\CORE\core_cmFunc.h
 ..\obj\usart1.o: ..\CORE\core_cm4_simd.h
@@ -35,6 +35,6 @@
 ..\obj\usart1.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\usart1.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\usart1.o: ..\HARDWARE\usart1\usart1.h
-..\obj\usart1.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdio.h
-..\obj\usart1.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdarg.h
-..\obj\usart1.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\string.h
+..\obj\usart1.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\usart1.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\usart1.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\string.h

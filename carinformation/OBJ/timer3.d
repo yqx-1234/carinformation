@@ -1,7 +1,7 @@
 ..\obj\timer3.o: ..\HARDWARE\tim3\timer3.c
 ..\obj\timer3.o: ..\USER\stm32f4xx.h
 ..\obj\timer3.o: ..\CORE\core_cm4.h
-..\obj\timer3.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\timer3.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\timer3.o: ..\CORE\core_cmInstr.h
 ..\obj\timer3.o: ..\CORE\core_cmFunc.h
 ..\obj\timer3.o: ..\CORE\core_cm4_simd.h

@@ -1,7 +1,7 @@
 ..\obj\fourg.o: ..\HARDWARE\fourG\fourG.c
 ..\obj\fourg.o: ..\USER\stm32f4xx.h
 ..\obj\fourg.o: ..\CORE\core_cm4.h
-..\obj\fourg.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\fourg.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\fourg.o: ..\CORE\core_cmInstr.h
 ..\obj\fourg.o: ..\CORE\core_cmFunc.h
 ..\obj\fourg.o: ..\CORE\core_cm4_simd.h
@@ -36,9 +36,9 @@
 ..\obj\fourg.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\fourg.o: ..\HARDWARE\fourG\fourG.h
 ..\obj\fourg.o: ..\HARDWARE\usart2\usart2.h
-..\obj\fourg.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdio.h
-..\obj\fourg.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdarg.h
-..\obj\fourg.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\string.h
+..\obj\fourg.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\fourg.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\fourg.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\fourg.o: ..\SYSTEM\delay\delay.h
 ..\obj\fourg.o: ..\SYSTEM\sys\sys.h
 ..\obj\fourg.o: ..\HARDWARE\usart1\usart1.h
