@@ -49,3 +49,5 @@
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\tim3\timer3.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\led\led.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\mqtt\mqtt.h
+..\obj\stm32f4xx_it.o: ..\HARDWARE\usart3\usart3.h
+..\obj\stm32f4xx_it.o: ..\HARDWARE\gcan600\gcan600.h

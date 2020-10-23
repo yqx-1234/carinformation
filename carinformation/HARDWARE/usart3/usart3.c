@@ -1,8 +1,6 @@
 #include "usart3.h"
-
-
-unsigned int Usart2_RxCounter = 0;      //定义一个变量，记录串口2总共接收了多少字节的数据
-char Usart2_RxBuff[USART3_RXBUFF_SIZE]; //定义一个数组，用于保存串口2接收到的数据
+unsigned int usart3_RxCounter = 0;      //定义一个变量，记录串口2总共接收了多少字节的数据
+char usart3_RxBuff[USART3_RXBUFF_SIZE]; //定义一个数组，用于保存串口2接收到的数据
 /*---------------------------------------*/
 /*初始化串口2                            */
 /*函数名：usart3_Init(u32 bound)         */
@@ -38,9 +36,9 @@ void usart3_Init(u32 bound){
 	 
 	  
 	
-#if EN_USART1_RX	
+#if EN_USART3_RX	
 	USART_ITConfig(USART3,USART_IT_RXNE,ENABLE);//串口接收中断使能
-	NVIC_InitStructure.NVIC_IRQChannel=USART3_IRQn;//中断通道为USART1
+	NVIC_InitStructure.NVIC_IRQChannel=USART3_IRQn;//中断通道为USART3
 	NVIC_InitStructure.NVIC_IRQChannelCmd=ENABLE;//中断通道使能
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0;//抢占优先级为0
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority=0;//响应优先级为0

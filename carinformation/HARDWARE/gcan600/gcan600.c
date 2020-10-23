@@ -1,3 +1,3 @@
 #include "gcan600.h"
-void gcan600_data(void){
+void GCAN600_Data(void){
 }

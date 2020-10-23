@@ -1,5 +1,5 @@
 Dependencies for Project 'LED', Target 'LED': (DO NOT MODIFY !)
-F (.\main.c)(0x5F8FA531)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5F92A10F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\SYSTEM\sys\sys.h)(0x5F89104F)
 I (..\USER\stm32f4xx.h)(0x5F89104F)
 I (..\CORE\core_cm4.h)(0x5F89104F)
@@ -50,8 +50,8 @@ I (..\HARDWARE\tim3\timer3.h)(0x5F89104F)
 I (..\HARDWARE\tim4\timer4.h)(0x5F8FA7B6)
 I (..\HARDWARE\timer2\timer2.h)(0x5F8FFF09)
 I (..\HARDWARE\commu\commu.h)(0x5F89104F)
-F (.\stm32f4xx_it.c)(0x5F90F1B3)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_it.o --omf_browse ..\obj\stm32f4xx_it.crf --depend ..\obj\stm32f4xx_it.d)
-I (stm32f4xx_it.h)(0x5F89104F)
+F (.\stm32f4xx_it.c)(0x5F929EF4)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f4xx_it.o --omf_browse ..\obj\stm32f4xx_it.crf --depend ..\obj\stm32f4xx_it.d)
+I (stm32f4xx_it.h)(0x5F92879C)
 I (stm32f4xx.h)(0x5F89104F)
 I (..\CORE\core_cm4.h)(0x5F89104F)
 I (D:\softwarenew\keil532\ARM\ARMCC\include\stdint.h)(0x588B8344)
@@ -101,6 +101,8 @@ I (..\HARDWARE\fourG\fourG.h)(0x5F89104F)
 I (..\HARDWARE\tim3\timer3.h)(0x5F89104F)
 I (..\HARDWARE\led\led.h)(0x5F89104F)
 I (..\HARDWARE\mqtt\mqtt.h)(0x5F89104F)
+I (..\HARDWARE\usart3\usart3.h)(0x5F9289DA)
+I (..\HARDWARE\gcan600\gcan600.h)(0x5F92A10F)
 F (.\system_stm32f4xx.c)(0x5F89104F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\system_stm32f4xx.o --omf_browse ..\obj\system_stm32f4xx.crf --depend ..\obj\system_stm32f4xx.d)
 I (stm32f4xx.h)(0x5F89104F)
 I (..\CORE\core_cm4.h)(0x5F89104F)
@@ -294,7 +296,7 @@ I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5F89104F)
 I (..\HARDWARE\tim4\timer4.h)(0x5F8FA7B6)
 I (..\HARDWARE\timer2\timer2.h)(0x5F8FFF09)
 I (..\SYSTEM\sys\sys.h)(0x5F89104F)
-F (..\HARDWARE\mqtt\mqtt.c)(0x5F89104F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mqtt.o --omf_browse ..\obj\mqtt.crf --depend ..\obj\mqtt.d)
+F (..\HARDWARE\mqtt\mqtt.c)(0x5F92A10F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mqtt.o --omf_browse ..\obj\mqtt.crf --depend ..\obj\mqtt.d)
 I (..\USER\stm32f4xx.h)(0x5F89104F)
 I (..\CORE\core_cm4.h)(0x5F89104F)
 I (D:\softwarenew\keil532\ARM\ARMCC\include\stdint.h)(0x588B8344)
@@ -422,7 +424,7 @@ I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5F89104F)
 I (..\SYSTEM\delay\delay.h)(0x5F89104F)
 I (..\SYSTEM\sys\sys.h)(0x5F89104F)
 I (..\HARDWARE\key\key.h)(0x5F89104F)
-F (..\HARDWARE\commu\commu.c)(0x5F89104F)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\commu.o --omf_browse ..\obj\commu.crf --depend ..\obj\commu.d)
+F (..\HARDWARE\commu\commu.c)(0x5F92A25D)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\commu.o --omf_browse ..\obj\commu.crf --depend ..\obj\commu.d)
 I (..\SYSTEM\sys\sys.h)(0x5F89104F)
 I (..\USER\stm32f4xx.h)(0x5F89104F)
 I (..\CORE\core_cm4.h)(0x5F89104F)
@@ -509,8 +511,8 @@ I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5F89104F)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5F89104F)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5F89104F)
 I (..\HARDWARE\led\led.h)(0x5F89104F)
-F (..\HARDWARE\gcan600\gcan600.c)(0x5F8F9CAA)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\gcan600.o --omf_browse ..\obj\gcan600.crf --depend ..\obj\gcan600.d)
-I (..\HARDWARE\gcan600\gcan600.h)(0x5F8F9E52)
+F (..\HARDWARE\gcan600\gcan600.c)(0x5F9289DA)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\gcan600.o --omf_browse ..\obj\gcan600.crf --depend ..\obj\gcan600.d)
+I (..\HARDWARE\gcan600\gcan600.h)(0x5F92A10F)
 I (..\HARDWARE\usart2\usart2.h)(0x5F90FBA4)
 I (D:\softwarenew\keil532\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\softwarenew\keil532\ARM\ARMCC\include\stdarg.h)(0x588B8344)
@@ -586,8 +588,8 @@ I (..\FWLIB\inc\stm32f4xx_can.h)(0x5F89104F)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x5F89104F)
 I (..\FWLIB\inc\stm32f4xx_dcmi.h)(0x5F89104F)
 I (..\FWLIB\inc\stm32f4xx_fsmc.h)(0x5F89104F)
-F (..\HARDWARE\usart3\usart3.c)(0x5F90FD27)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\usart3.o --omf_browse ..\obj\usart3.crf --depend ..\obj\usart3.d)
-I (..\HARDWARE\usart3\usart3.h)(0x5F90FEC4)
+F (..\HARDWARE\usart3\usart3.c)(0x5F92A046)(-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\HARDWARE\fourG -I ..\HARDWARE\mqtt -I ..\HARDWARE\usart1 -I ..\HARDWARE\usart2 -I ..\HARDWARE\HMAC\inc -I ..\HARDWARE\key -I ..\HARDWARE\tim3 -I ..\HARDWARE\tim4 -I ..\HARDWARE\commu -I ..\HARDWARE\led -I ..\HARDWARE\gcan600 -I ..\HARDWARE\timer2 -I ..\HARDWARE\usart3-I.\RTE\_LED-IE:\stm32learning\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\softwarenew\keil532\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F407xx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\usart3.o --omf_browse ..\obj\usart3.crf --depend ..\obj\usart3.d)
+I (..\HARDWARE\usart3\usart3.h)(0x5F9289DA)
 I (..\FWLIB\inc\misc.h)(0x5F89104F)
 I (..\USER\stm32f4xx.h)(0x5F89104F)
 I (..\CORE\core_cm4.h)(0x5F89104F)

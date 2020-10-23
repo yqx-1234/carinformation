@@ -46,7 +46,7 @@
 /*            Cortex-M4 Processor Exceptions Handlers                         */
 /******************************************************************************/
 #include "stm32f4xx.h"     //包含需要的头文件
-#include "stm32f4xx_it.h"  //包含需要的头文件
+//#include "stm32f4xx_it.h"  //包含需要的头文件
 #include "main.h"          //包含需要的头文件
 #include "delay.h"         //包含需要的头文件
 #include "usart1.h"        //包含需要的头文件
@@ -57,7 +57,8 @@
 #include "timer3.h"        //包含需要的头文件
 #include "led.h"           //包含需要的头文件
 #include "mqtt.h"          //包含需要的头文件
-
+#include "usart3.h"        //包含需要的头文件
+#include "gcan600.h"
 /*-------------------------------------------------*/
 /*函数名：串口2接收中断函数                        */
 /*参  数：无                                       */
@@ -97,14 +98,14 @@ void USART3_IRQHandler(void){
 		
 	}
 	
-
+}
 /*-------------------------------------------------*/
 /*函数名：定时器4中断服务函数                      */
 /*参  数：无                                       */
 /*返回值：无                                       */
 /*-------------------------------------------------*/
-void TIM4_IRQHandler(void)
-{
+
+	void TIM4_IRQHandler(void){
 	if(TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET){                //如果TIM_IT_Update置位，表示TIM4溢出中断，进入if	
 		
 		memcpy(&MQTT_RxDataInPtr[2],Usart2_RxBuff,Usart2_RxCounter);  //拷贝数据到接收缓冲区
@@ -152,80 +153,82 @@ void TIM3_IRQHandler(void)
 }
 /*------------------------------------------*/
 /*函数名：定时器2中断服务函数*              */
+/*函数作用：定时器定时5s采集传感器数据并打包成MQTT报文数据*/
 /*参数：无                                  */
 /*返回值：无                                */
 /*------------------------------------------*/
 void TIM2_IRQHandler(void){
-	u32 i=0;
+	u32 i=0; //定义两个循环变量
 	u32 j=0;
-	if(TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET){   //如果TIM_IT_Update置位，表示TIM2溢出中断，进入if	  
-         u2_printf("ATPID=13\r\n");
-		      for(i=0;i<10000;i--)
-		          for(j=0;j<20000;j--);
-		     if(strstr(usart3_RxBuff,"PID13")){
-					 GCAN600_Data();
-				 }
-				 usart3_RxCounter=0;
-				  elseif(strstr(usart3_RxBuff,"PID05")==0){
-					 u2_printf("ATPID=47\r\n");
-				   for(i=0;i<10000;i--)
-				     for(j=0;j<20000;j--);
-				   if(strstr(usart3_RxBuff,"PID47")){
-					   GCAN600_Data();
-				   }
+	if(TIM_GetITStatus(TIM2, TIM_IT_Update)!= RESET){   //如果TIM_IT_Update置位，表示TIM2溢出中断，进入if	  
+    u3_printf("ATPID=13\r\n");
+		for(i=0;i<4200;i--)
+		  for(j=0;j<20000;j--); //循环延时约0.5s
+		if(strstr(usart3_RxBuff,"PID13")){
+		  GCAN600_Data();
+			usart3_RxCounter=0;
+		}
+		else if(strstr(usart3_RxBuff,"PID13")==0){
+		  u3_printf("ATPID=13\r\n");
+			for(i=0;i<4200;i--)
+				for(j=0;j<20000;j--);
+		  if(strstr(usart3_RxBuff,"PID13")){         //第一次读取车速数据不成功，重新发送查询命令
+			  GCAN600_Data();
 				usart3_RxCounter=0;
-         }
-         else{
-            u1_printf("接收数据错误\r\n");	
-            data_flag=1;
+			}
+    }
+    else{
+      u1_printf("接收车速数据时发生错误\r\n");	
+      data_Flag=1;
+		  usart3_RxCounter=0;
+    }
+		
+ /*---------------采集冷却液温度信息------------------*/			 
+		u3_printf("ATPID=05\r\n");
+			for(i=0;i<4200;i--)
+				for(j=0;j<20000;j--);  //延时约0.5s
+		if(strstr(usart3_RxBuff,"PID05")){
+			GCAN600_Data();
+			usart3_RxCounter=0;
+		}
+		else if(strstr(usart3_RxBuff,"PID05")==0){
+			u3_printf("ATPID=47\r\n");
+			for(i=0;i<4200;i--)
+				for(j=0;j<20000;j--);
+			if(strstr(usart3_RxBuff,"PID47")){
+				GCAN600_Data();
 				usart3_RxCounter=0;
-         }				
-				 
-				 u2_printf("ATPID=05\r\n");
-				 for(i=0;i<10000;i--)
-				   for(j=0;j<20000;j--);
-				 if(strstr(usart3_RxBuff,"PID05")){
-					 GCAN600_Data();
-				 }
-				 usart3_RxCounter=0;
-				  elseif(strstr(usart3_RxBuf,"PID05")==0){
-					 u2_printf("ATPID=47\r\n");
-				   for(i=0;i<10000;i--)
-				     for(j=0;j<20000;j--);
-				   if(strstr(usart3_RxBuff,"PID47")){
-					   GCAN600_Data();
-				   }
-					 usart3_RxCounter=0;
-         }
-         else{
-            u1_printf("接收数据错误\r\n");	
-            data_flag=1;
-         }				
-				 
-				 u2_printf("ATPID=47\r\n");
-				 for(i=0;i<10000;i--)
-				   for(j=0;j<20000;j--);
-				 if(strstr(usart3_RxBuff,"PID47")){
-					 GCAN600_Data();
-				 }
-				 usart3_RxCounter=0;
-				 elseif(strstr(usart3_RxBuf,"PID05")==0){
-					 u2_printf("ATPID=47\r\n");
-				   for(i=0;i<10000;i--)
-				     for(j=0;j<20000;j--);
-				   if(strstr(usart3_RxBuff,"PID47")){
-					   GCAN600_Data();
-				   }
-					 usart3_RxCounter=0;
-         }
-         else{
-            u1_printf("接收数据错误\r\n");	
-            data_flag=1;
-					 usart3_RxCounter=0;
-         }					 
-					 
-			 }
-		 }
+			}
+   }
+   else{
+     u1_printf("接收冷却液温度数据时发生错误\r\n");	
+     data_Flag=1;
+   }		
+/*----------------读取汽车当前油量信息-------------*/	 
+		u3_printf("ATPID=47\r\n");
+			for(i=0;i<4200;i--)
+				for(j=0;j<20000;j--);
+		if(strstr(usart3_RxBuff,"PID47")){
+			GCAN600_Data();
+			usart3_RxCounter=0;
+		}
+		else if(strstr(usart3_RxBuff,"PID05")==0){
+			u3_printf("ATPID=47\r\n");
+			for(i=0;i<4200;i--)
+				for(j=0;j<20000;j--);
+			if(strstr(usart3_RxBuff,"PID47")){
+				GCAN600_Data();
+				usart3_RxCounter=0;
+			}
+   }
+   else{
+     u1_printf("接收数据错误\r\n");	
+     data_Flag=1;
+		 usart3_RxCounter=0;
+   }					 				 
+  }
+	TIM_ClearITPendingBit(TIM2, TIM_IT_Update);      //清除TIM2溢出中断标志 
+}
 
 
 

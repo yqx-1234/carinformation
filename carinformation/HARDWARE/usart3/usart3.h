@@ -19,4 +19,5 @@
 extern unsigned int usart3_RxCounter;          //外部声明，其他文件可以调用该变量
 extern char usart3_RxBuff[USART3_RXBUFF_SIZE]; //外部声明，其他文件可以调用该变量
 void usart3_Init(u32 bound);
+#define EN_USART3_RX 1
 #endif
