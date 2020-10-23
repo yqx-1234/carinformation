@@ -2,7 +2,7 @@
 ..\obj\commu.o: ..\SYSTEM\sys\sys.h
 ..\obj\commu.o: ..\USER\stm32f4xx.h
 ..\obj\commu.o: ..\CORE\core_cm4.h
-..\obj\commu.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\commu.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\commu.o: ..\CORE\core_cmInstr.h
 ..\obj\commu.o: ..\CORE\core_cmFunc.h
 ..\obj\commu.o: ..\CORE\core_cm4_simd.h
@@ -37,12 +37,12 @@
 ..\obj\commu.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\commu.o: ..\SYSTEM\delay\delay.h
 ..\obj\commu.o: ..\SYSTEM\usart\usart.h
-..\obj\commu.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\commu.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\commu.o: ..\HARDWARE\led\led.h
 ..\obj\commu.o: ..\HARDWARE\mqtt\mqtt.h
 ..\obj\commu.o: ..\HARDWARE\usart1\usart1.h
-..\obj\commu.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdarg.h
-..\obj\commu.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\string.h
+..\obj\commu.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\commu.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\commu.o: ..\HARDWARE\usart2\usart2.h
 ..\obj\commu.o: ..\HARDWARE\fourG\fourG.h
 ..\obj\commu.o: ..\HARDWARE\key\key.h

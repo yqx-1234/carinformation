@@ -2,7 +2,7 @@
 ..\obj\stm32f4xx_it.o: stm32f4xx_it.h
 ..\obj\stm32f4xx_it.o: stm32f4xx.h
 ..\obj\stm32f4xx_it.o: ..\CORE\core_cm4.h
-..\obj\stm32f4xx_it.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\stm32f4xx_it.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\stm32f4xx_it.o: ..\CORE\core_cmInstr.h
 ..\obj\stm32f4xx_it.o: ..\CORE\core_cmFunc.h
 ..\obj\stm32f4xx_it.o: ..\CORE\core_cm4_simd.h
@@ -39,9 +39,9 @@
 ..\obj\stm32f4xx_it.o: ..\SYSTEM\delay\delay.h
 ..\obj\stm32f4xx_it.o: ..\SYSTEM\sys\sys.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\usart1\usart1.h
-..\obj\stm32f4xx_it.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdio.h
-..\obj\stm32f4xx_it.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdarg.h
-..\obj\stm32f4xx_it.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\string.h
+..\obj\stm32f4xx_it.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\stm32f4xx_it.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\stm32f4xx_it.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\usart2\usart2.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\tim4\timer4.h
 ..\obj\stm32f4xx_it.o: ..\HARDWARE\timer2\timer2.h
