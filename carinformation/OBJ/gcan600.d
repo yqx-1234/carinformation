@@ -1,13 +1,13 @@
 ..\obj\gcan600.o: ..\HARDWARE\gcan600\gcan600.c
 ..\obj\gcan600.o: ..\HARDWARE\gcan600\gcan600.h
 ..\obj\gcan600.o: ..\HARDWARE\usart2\usart2.h
-..\obj\gcan600.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdio.h
-..\obj\gcan600.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdarg.h
-..\obj\gcan600.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\string.h
+..\obj\gcan600.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\gcan600.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\gcan600.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\gcan600.o: ..\FWLIB\inc\stm32f4xx_rcc.h
 ..\obj\gcan600.o: ..\USER\stm32f4xx.h
 ..\obj\gcan600.o: ..\CORE\core_cm4.h
-..\obj\gcan600.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\gcan600.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\gcan600.o: ..\CORE\core_cmInstr.h
 ..\obj\gcan600.o: ..\CORE\core_cmFunc.h
 ..\obj\gcan600.o: ..\CORE\core_cm4_simd.h
@@ -40,3 +40,6 @@
 ..\obj\gcan600.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\gcan600.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\gcan600.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
+..\obj\gcan600.o: ..\HARDWARE\mqtt\mqtt.h
+..\obj\gcan600.o: ..\HARDWARE\usart3\usart3.h
+..\obj\gcan600.o: ..\SYSTEM\sys\sys.h

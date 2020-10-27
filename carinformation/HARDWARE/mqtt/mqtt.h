@@ -18,6 +18,9 @@
 #define  C_NUM               5     //ÃüÁî»º³åÇø¸öÊı
 #define  CBUFF_UNIT          300   //ÃüÁî»º³åÇø³¤¶È
 
+#define  S_NUM               5     //´«¸ĞÆ÷Êı¾İ»º´æÇø¸öÊı
+#define  SBUFF_UNIT          300   //´«¸ĞÆ÷Êı¾İ»º´æÇø³¤¶È
+
 #define  MQTT_TxData(x)       u2_TxData(x)                                         //´®¿Ú2¸ºÔğÊı¾İ·¢ËÍ
 
 #define  PRODUCTKEY           "a1QFeJHSoAp"                                        //²úÆ·ID
@@ -40,7 +43,12 @@ extern unsigned char *MQTT_TxDataEndPtr;                       //Íâ²¿±äÁ¿ÉùÃ÷£¬Ö
 extern unsigned char  MQTT_CMDBuf[C_NUM][CBUFF_UNIT];          //Íâ²¿±äÁ¿ÉùÃ÷£¬ÃüÁîÊı¾İµÄ½ÓÊÕ»º³åÇø
 extern unsigned char *MQTT_CMDInPtr;                           //Íâ²¿±äÁ¿ÉùÃ÷£¬Ö¸Ïò»º³åÇø´æ·ÅÊı¾İµÄÎ»ÖÃ
 extern unsigned char *MQTT_CMDOutPtr;                          //Íâ²¿±äÁ¿ÉùÃ÷£¬Ö¸Ïò»º³åÇø¶ÁÈ¡Êı¾İµÄÎ»ÖÃ
-extern unsigned char *MQTT_CMDEndPtr;                          //Íâ²¿±äÁ¿ÉùÃ÷£¬Ö¸Ïò»º³åÇø½áÊøµÄÎ»ÖÃ
+extern unsigned char *MQTT_CMDEndPtr;                          //Íâ²¿±äÁ¿ÉùÃ÷£¬Ö¸Ïò»º³åÇø½áÊøµÄÎ»ÖÃ¡¢
+extern unsigned char MQTT_RxSensorDataBuf[S_NUM][SBUFF_UNIT];     //´«¸ĞÆ÷Êı¾İ»º´æÇø
+extern unsigned char *MQTT_RxSensorDataInPtr;                  //Ö¸Ïò´«¸ĞÆ÷Êı¾İ»º´æÇø´æ·ÅÊı¾İµÄÎ»ÖÃ
+extern unsigned char *MQTT_RxSensorDataOutPtr;                 //Ö¸Ïò´«¸ĞÆ÷Êı¾İ»º´æÇø¶ÁÈ¡Êı¾İµÄÎ»ÖÃ
+extern unsigned char *MQTT_RxSensorDataEndPtr;                 //Ö¸Ïò´«¸ĞÆ÷Êı¾İ»º´æÇø½áÊøµÄÎ»ÖÃ
+
 
 extern char ClientID[128];     //Íâ²¿±äÁ¿ÉùÃ÷£¬´æ·Å¿Í»§¶ËIDµÄ»º³åÇø
 extern int  ClientID_len;      //Íâ²¿±äÁ¿ÉùÃ÷£¬´æ·Å¿Í»§¶ËIDµÄ³¤¶È

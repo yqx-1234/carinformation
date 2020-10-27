@@ -29,6 +29,11 @@ unsigned char *MQTT_CMDInPtr;                               //指向命令缓冲区存放
 unsigned char *MQTT_CMDOutPtr;                              //指向命令缓冲区读取数据的位置
 unsigned char *MQTT_CMDEndPtr;                              //指向命令缓冲区结束的位置
 
+unsigned char MQTT_RxSensorDataBuf[S_NUM][SBUFF_UNIT];      //传感器数据缓存区
+unsigned char *MQTT_RxSensorDataInPtr;                      //指向传感器数据缓存区存放数据的位置
+unsigned char *MQTT_RxSensorDataOutPtr;                     //指向传感器数据缓存区读取数据的位置
+unsigned char *MQTT_RxSensorDataEndPtr;                     //指向传感器数据缓存区结束的位置
+
 char ClientID[128];                                          //存放客户端ID的缓冲区
 int  ClientID_len;                                           //存放客户端ID的长度
 
@@ -70,6 +75,11 @@ void MQTT_Buff_Init(void)
 	MQTT_CMDInPtr=MQTT_CMDBuf[0];                     //指向命令缓冲区存放数据的指针归位
 	MQTT_CMDOutPtr=MQTT_CMDInPtr;                     //指向命令缓冲区读取数据的指针归位
 	MQTT_CMDEndPtr=MQTT_CMDBuf[C_NUM-1];              //指向命令缓冲区结束的指针归位
+	
+	MQTT_RxSensorDataInPtr=MQTT_RxSensorDataBuf[0];   //指向传感器数据缓存区
+	MQTT_RxSensorDataOutPtr=MQTT_RxSensorDataInPtr;   //
+	MQTT_RxSensorDataEndPtr=MQTT_RxSensorDataBuf[S_NUM-1];
+	
 
     MQTT_ConectPack();                                //发送缓冲区添加连接报文
 	MQTT_Subscribe(S_TOPIC_NAME,0);	                  //发送缓冲区添加订阅topic，等级0	

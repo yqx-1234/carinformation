@@ -167,6 +167,7 @@ void TIM2_IRQHandler(void){
 		if(strstr(usart3_RxBuff,"PID13")){
 		  GCAN600_Data();
 			usart3_RxCounter=0;
+			data_Flag=0;
 		}
 		else if(strstr(usart3_RxBuff,"PID13")==0){
 		  u3_printf("ATPID=13\r\n");
@@ -175,6 +176,7 @@ void TIM2_IRQHandler(void){
 		  if(strstr(usart3_RxBuff,"PID13")){         //第一次读取车速数据不成功，重新发送查询命令
 			  GCAN600_Data();
 				usart3_RxCounter=0;
+				data_Flag=0;
 			}
     }
     else{
@@ -189,6 +191,7 @@ void TIM2_IRQHandler(void){
 				for(j=0;j<20000;j--);  //延时约0.5s
 		if(strstr(usart3_RxBuff,"PID05")){
 			GCAN600_Data();
+			data_Flag=0;
 			usart3_RxCounter=0;
 		}
 		else if(strstr(usart3_RxBuff,"PID05")==0){
@@ -197,6 +200,7 @@ void TIM2_IRQHandler(void){
 				for(j=0;j<20000;j--);
 			if(strstr(usart3_RxBuff,"PID47")){
 				GCAN600_Data();
+				data_Flag=0;
 				usart3_RxCounter=0;
 			}
    }
@@ -210,6 +214,7 @@ void TIM2_IRQHandler(void){
 				for(j=0;j<20000;j--);
 		if(strstr(usart3_RxBuff,"PID47")){
 			GCAN600_Data();
+			data_Flag=0;
 			usart3_RxCounter=0;
 		}
 		else if(strstr(usart3_RxBuff,"PID05")==0){
@@ -218,6 +223,7 @@ void TIM2_IRQHandler(void){
 				for(j=0;j<20000;j--);
 			if(strstr(usart3_RxBuff,"PID47")){
 				GCAN600_Data();
+				data_Flag=0;
 				usart3_RxCounter=0;
 			}
    }

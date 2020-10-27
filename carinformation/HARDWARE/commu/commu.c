@@ -90,7 +90,7 @@ void communication(void){
 					u1_printf("PING报文回复\r\n"); 		  //串口输出信息 
 					if(Ping_flag==1){                     //如果Ping_flag=1，表示第一次发送
 						 Ping_flag = 0;    				  //要清除Ping_flag标志
-					}else if(Ping_flag>1){ 				  //如果Ping_flag>1，表示是多次发送了，而且是2s间隔的快速发送
+					}else if(Ping_flag>1){ 			  //如果Ping_flag>1，表示是多次发送了，而且是2s间隔的快速发送
 						Ping_flag = 0;     				  //要清除Ping_flag标志
 						TIM3_ENABLE_30S(); 				  //PING定时器重回30s的时间
 					}				

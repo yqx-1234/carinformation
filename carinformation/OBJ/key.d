@@ -1,7 +1,7 @@
 ..\obj\key.o: ..\HARDWARE\key\key.c
 ..\obj\key.o: ..\USER\stm32f4xx.h
 ..\obj\key.o: ..\CORE\core_cm4.h
-..\obj\key.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\key.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\key.o: ..\CORE\core_cmInstr.h
 ..\obj\key.o: ..\CORE\core_cmFunc.h
 ..\obj\key.o: ..\CORE\core_cm4_simd.h

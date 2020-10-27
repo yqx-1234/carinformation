@@ -1,7 +1,7 @@
 ..\obj\led.o: ..\HARDWARE\led\led.c
 ..\obj\led.o: ..\USER\stm32f4xx.h
 ..\obj\led.o: ..\CORE\core_cm4.h
-..\obj\led.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\led.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\led.o: ..\CORE\core_cmInstr.h
 ..\obj\led.o: ..\CORE\core_cmFunc.h
 ..\obj\led.o: ..\CORE\core_cm4_simd.h
