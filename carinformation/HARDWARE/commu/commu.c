@@ -76,8 +76,10 @@ void communication(void){
 						case 0x00 :
 						case 0x01 : u1_printf("订阅成功\r\n");            //串口输出信息
 							        SubcribePack_flag = 1;                //SubcribePack_flag置1，表示订阅报文成功，其他报文可发送
-									Ping_flag = 0;                        //Ping_flag清零
+									    Ping_flag = 0;                        //Ping_flag清零
    								    TIM3_ENABLE_30S();                    //启动30s的PING定时器
+						          TIM_Cmd(TIM2,ENABLE);
+						          u1_printf("定时器2开启\r\n");     //定时器2开启,传感器数据处理开始
 									LED1_State();                         //判断开关状态，并发布给服务器  
 									break;                                //跳出分支                                             
 						default   : u1_printf("订阅失败，准备重启\r\n");  //串口输出信息 
@@ -131,7 +133,8 @@ void communication(void){
 		else{ 
 			u1_printf("需要连接服务器\r\n");                 //串口输出信息
 			TIM_Cmd(TIM4,DISABLE);                           //关闭TIM4 
-			TIM_Cmd(TIM3,DISABLE);                           //关闭TIM3  
+			TIM_Cmd(TIM3,DISABLE);			//关闭TIM3 
+      TIM_Cmd(TIM2,DISABLE);			//关闭TIM2
 			fourG_RxCounter=0;                                //WiFi接收数据量变量清零                        
 			memset(fourG_RX_BUF,0,fourG_RXBUFF_SIZE);          //清空WiFi接收缓冲区 
 			if(fourG_Connect_IoTServer()==0){   			     //如果WiFi连接云服务器函数返回0，表示正确，进入if

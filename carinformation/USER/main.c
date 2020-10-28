@@ -14,6 +14,7 @@
 #include "string.h"
 #include "stm32f4xx_gpio.h"
 #include "stm32f4xx_rcc.h"
+#include "gcan600.h"
 //ALIENTEK 探索者STM32F407开发板 实验1
 //跑马灯实验 -库函数版本
 //技术支持：www.openedv.com
@@ -30,6 +31,9 @@ int main(void)
 	Usart1_Init(9600);              //串口1功能初始化，波特率9600
 	Usart2_Init(115200);            //串口2功能初始化，波特率115200	
 	TIM4_Init(500,7200);            //TIM4初始化，定时时间 500*7200*1000/72000000 = 50ms
+	timer2_Enable_5s();
+	u1_printf("调试\r\n");
+	TIM_Cmd(TIM2,DISABLE);
 	LED_Init();	                    //LED初始化
 	KEY_Init();                     //按键初始化
 	fourG_ResetIO_Init();            //初始化WiFi的复位IO

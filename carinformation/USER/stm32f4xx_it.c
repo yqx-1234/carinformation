@@ -180,7 +180,8 @@ void TIM2_IRQHandler(void){
 			}
     }
     else{
-      u1_printf("接收车速数据时发生错误\r\n");	
+      u1_printf("接收车速数据时发生错误\r\n");
+			GCAN600_Data();  //调试用
       data_Flag=1;
 		  usart3_RxCounter=0;
     }

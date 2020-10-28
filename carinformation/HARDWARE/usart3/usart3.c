@@ -68,6 +68,6 @@ void u3_printf(char* fmt,...)
 	for(i = 0;i < length;i ++)
 	{			
 		USART3->DR = usart3_TxBuff[i];
-		while((USART2->SR&0X40)==0);	
+		while((USART3->SR&0X40)==0);	
 	}	
 }

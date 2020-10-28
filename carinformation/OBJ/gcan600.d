@@ -43,3 +43,5 @@
 ..\obj\gcan600.o: ..\HARDWARE\mqtt\mqtt.h
 ..\obj\gcan600.o: ..\HARDWARE\usart3\usart3.h
 ..\obj\gcan600.o: ..\SYSTEM\sys\sys.h
+..\obj\gcan600.o: ..\HARDWARE\usart1\usart1.h
+..\obj\gcan600.o: ..\HARDWARE\fourG\fourG.h

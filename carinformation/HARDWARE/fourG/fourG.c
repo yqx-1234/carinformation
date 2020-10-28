@@ -202,6 +202,7 @@ char WiFi_WaitAP(int timeout)
 /*参  数：无                                       */
 /*返回值：0：正确   其他：错误                     */
 /*-------------------------------------------------*/
+
 char fourG_Connect_IoTServer(void)
 {
 	u1_printf("准备进入AT指令模式\r\n");	//串口提示数据

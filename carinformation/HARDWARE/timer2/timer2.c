@@ -19,9 +19,10 @@ void timer2_Enable_5s(void){
 	
 	NVIC_InitStructure.NVIC_IRQChannel=TIM2_IRQn;  //¶¨Ê±Æ÷2Òç³öÖĞ¶Ï
 	NVIC_InitStructure.NVIC_IRQChannelCmd=ENABLE;  //Ê¹ÄÜÍ¨µÀ
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0x01;//ÇÀÕ¼ÓÅÏÈ¼¶Îª1
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0x02;//ÇÀÕ¼ÓÅÏÈ¼¶Îª1
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority=0x02;       //ÏìÓ¦ÓÅÏÈ¼¶Îª2
 	NVIC_Init(&NVIC_InitStructure);
+		TIM_ClearITPendingBit(TIM2,TIM_IT_Update);                    //Çå³ıÒç³öÖĞ¶Ï±êÖ¾Î
 
 	TIM_Cmd(TIM2,ENABLE);  //Ê¹ÄÜ¶¨Ê±Æ÷2
 }
