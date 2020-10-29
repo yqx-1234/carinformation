@@ -50,3 +50,5 @@
 ..\obj\main.o: ..\HARDWARE\tim4\timer4.h
 ..\obj\main.o: ..\HARDWARE\timer2\timer2.h
 ..\obj\main.o: ..\HARDWARE\commu\commu.h
+..\obj\main.o: ..\HARDWARE\gcan600\gcan600.h
+..\obj\main.o: ..\HARDWARE\usart3\usart3.h

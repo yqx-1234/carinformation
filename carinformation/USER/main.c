@@ -31,6 +31,7 @@ int main(void)
 	Usart1_Init(9600);              //串口1功能初始化，波特率9600
 	Usart2_Init(115200);            //串口2功能初始化，波特率115200	
 	TIM4_Init(500,7200);            //TIM4初始化，定时时间 500*7200*1000/72000000 = 50ms
+	usart3_Init(9600);              //串口3功能初始化，波特率9600
 	timer2_Enable_5s();
 	u1_printf("调试\r\n");
 	TIM_Cmd(TIM2,DISABLE);

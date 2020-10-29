@@ -63,7 +63,7 @@ void TIM3_ENABLE_2S(void)
 	TIM_Cmd(TIM3,ENABLE);                                         //开TIM3                          
 	
 	NVIC_InitStructure.NVIC_IRQChannel=TIM3_IRQn;                 //设置TIM3中断
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=1;       //抢占优先级1
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=2;       //抢占优先级1
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority=0;              //子优先级0
 	NVIC_InitStructure.NVIC_IRQChannelCmd=ENABLE;                 //中断通道使能
 	NVIC_Init(&NVIC_InitStructure);                               //设置中断

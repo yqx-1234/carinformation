@@ -36,3 +36,7 @@
 ..\obj\timer2.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\timer2.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\timer2.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
+..\obj\timer2.o: ..\HARDWARE\usart1\usart1.h
+..\obj\timer2.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\timer2.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\timer2.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\string.h

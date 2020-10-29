@@ -1,0 +1,1 @@
+{"method":"thing.service.property.set","id":"58425962","params":{"CarPower1":10.2},"version":"1.0.0"}
