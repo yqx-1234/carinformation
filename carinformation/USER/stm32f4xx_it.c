@@ -160,22 +160,24 @@ void TIM3_IRQHandler(void)
 void TIM2_IRQHandler(void){
 	u32 i=0; //定义两个循环变量
 	u32 j=0;
+	u8 k=0;
 	if(TIM_GetITStatus(TIM2, TIM_IT_Update)!= RESET){   //如果TIM_IT_Update置位，表示TIM2溢出中断，进入if	  
-		u1_printf("调试12\r\n");
-		u1_printf("接收车速数据时发生错误\r\n");
-			GCAN600_Data();  //调试用
+		u1_printf("调试14\r\n");
+		//u1_printf("接收车速数据时发生错误\r\n");
+		//	GCAN600_Data();  //调试用
     u3_printf("ATPID=13\r\n");
-		//for(i=0;i<4200;i--)
-		//  for(j=0;j<20000;j--); //循环延时约0.5s
-		if(strstr(usart3_RxBuff,"PID13")){
+		for(i=0;i<4200;i--)
+		  for(j=0;j<20000;j--); //循环延时约0.5s
+		//if(strstr(usart3_RxBuff,"PID13")){
+		if(k){
 		  GCAN600_Data();
 			usart3_RxCounter=0;
 			data_Flag=0;
 		}
-		else if(strstr(usart3_RxBuff,"PID13")==0){
+		else if(k){
 		  u3_printf("ATPID=13\r\n");
-			//for(i=0;i<4200;i--)
-			//	for(j=0;j<20000;j--);
+			for(i=0;i<4200;i--)
+				for(j=0;j<20000;j--);
 		  if(strstr(usart3_RxBuff,"PID13")){         //第一次读取车速数据不成功，重新发送查询命令
 			  GCAN600_Data();
 				usart3_RxCounter=0;

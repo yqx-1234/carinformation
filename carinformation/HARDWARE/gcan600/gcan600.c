@@ -26,7 +26,7 @@ void GCAN600_Data(void){
 	}
 	else
 	u1_printf("警告：此次数据打包过程出现问题：无数据打包\r\n");
-	temp_Data="10.2";
+	temp_Data="15";
 	sprintf(temp_Buff,"{\"method\":\"thing.event.property.post\",\"id\":\"203302324\",\"params\":{\"CarPower1\":%s},\"version\":\"1.0.0\"}",temp_Data);
 	MQTT_PublishQs0(P_TOPIC_NAME,temp_Buff,strlen(temp_Buff));	
 }
