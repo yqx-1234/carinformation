@@ -162,19 +162,20 @@ void TIM2_IRQHandler(void){
 	u32 j=0;
 	u8 k=0;
 	if(TIM_GetITStatus(TIM2, TIM_IT_Update)!= RESET){   //如果TIM_IT_Update置位，表示TIM2溢出中断，进入if	  
-		u1_printf("调试14\r\n");
+		u1_printf("调试15\r\n");
 		//u1_printf("接收车速数据时发生错误\r\n");
 		//	GCAN600_Data();  //调试用
     u3_printf("ATPID=13\r\n");
 		for(i=0;i<4200;i--)
 		  for(j=0;j<20000;j--); //循环延时约0.5s
-		//if(strstr(usart3_RxBuff,"PID13")){
-		if(k){
+		if(strstr(usart3_RxBuff,"PID13")){
+		//if(k){
 		  GCAN600_Data();
 			usart3_RxCounter=0;
 			data_Flag=0;
 		}
-		else if(k){
+		//else if(k){
+		/*else if(strstr(usart3_RxBuff,"PID13")==NULL){
 		  u3_printf("ATPID=13\r\n");
 			for(i=0;i<4200;i--)
 				for(j=0;j<20000;j--);
@@ -183,7 +184,7 @@ void TIM2_IRQHandler(void){
 				usart3_RxCounter=0;
 				data_Flag=0;
 			}
-    }
+   }*/
     else{
       u1_printf("接收车速数据时发生错误\r\n");
 			GCAN600_Data();  //调试用
