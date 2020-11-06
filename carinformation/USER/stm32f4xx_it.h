@@ -35,12 +35,14 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx.h"
-
+#include "mygps.h"
+#include "uart4.h"
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
 u8 data_Flag;
+extern _SaveData Save_Data;
 void NMI_Handler(void);
 void HardFault_Handler(void);
 void MemManage_Handler(void);

@@ -46,7 +46,7 @@
 /*            Cortex-M4 Processor Exceptions Handlers                         */
 /******************************************************************************/
 #include "stm32f4xx.h"     //包含需要的头文件
-//#include "stm32f4xx_it.h"  //包含需要的头文件
+#include "stm32f4xx_it.h"  //包含需要的头文件
 #include "main.h"          //包含需要的头文件
 #include "delay.h"         //包含需要的头文件
 #include "usart1.h"        //包含需要的头文件
@@ -59,6 +59,10 @@
 #include "mqtt.h"          //包含需要的头文件
 #include "usart3.h"        //包含需要的头文件
 #include "gcan600.h"
+#include "uart4.h"
+#include "mygps.h"
+u16 point1;
+_SaveData Save_Data;
 /*-------------------------------------------------*/
 /*函数名：串口2接收中断函数                        */
 /*参  数：无                                       */
@@ -91,7 +95,7 @@ void USART2_IRQHandler(void)
 /*-------------------------------------------------*/
 void USART3_IRQHandler(void){
 	if(USART_GetITStatus(USART3,USART_IT_RXNE)!=RESET){
-		if(USART2->DR){
+		if(USART3->DR){
 			usart3_RxBuff[usart3_RxCounter]=USART3->DR;
 			usart3_RxCounter++;
 		}
@@ -99,6 +103,46 @@ void USART3_IRQHandler(void){
 	}
 	
 }
+
+/*-------------------------------------------------*/
+/*函数名：串口4接收中断函数                        */
+/*参数：无                                         */
+/*返回值：无                                       */
+/*-------------------------------------------------*/
+void USART4_IRQHandler(void){
+	u8 Res;
+	if(USART_GetITStatus(UART4, USART_IT_RXNE) != RESET) 
+	{
+		Res =USART_ReceiveData(UART4);//(USART1->DR);	//读取接收到的数据
+	
+	if(Res == '$')
+	{
+		point1 = 0;	
+	}
+		
+
+	  uart4_RxBuff[point1++] = Res;
+
+	if(uart4_RxBuff[0] == '$' && uart4_RxBuff[4] == 'M' && uart4_RxBuff[5] == 'C')			//确定是否收到"GPRMC/GNRMC"这一帧数据
+	{
+		if(Res == '\n')									   
+		{
+			memset(Save_Data.GPS_Buffer, 0, GPS_Buffer_Length);      //清空
+			memcpy(Save_Data.GPS_Buffer, uart4_RxBuff, point1); 	//保存数据
+			Save_Data.isGetData = true;
+			point1 = 0;
+			memset(uart4_RxBuff, 0, UART4_RXBUFF_SIZE);      //清空				
+		}	
+				
+	}
+	
+	if(point1 >= UART4_RXBUFF_SIZE)
+	{
+		point1 = UART4_RXBUFF_SIZE;
+	}		
+ }
+}	
+
 /*-------------------------------------------------*/
 /*函数名：定时器4中断服务函数                      */
 /*参  数：无                                       */
@@ -165,6 +209,8 @@ void TIM2_IRQHandler(void){
 		u1_printf("调试15\r\n");
 		//u1_printf("接收车速数据时发生错误\r\n");
 		//	GCAN600_Data();  //调试用
+		parseGpsBuffer();
+		mygps_Data();//gps数据采集
     u3_printf("ATPID=13\r\n");
 		for(i=0;i<4200;i--)
 		  for(j=0;j<20000;j--); //循环延时约0.5s

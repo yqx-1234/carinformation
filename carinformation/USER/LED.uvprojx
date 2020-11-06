@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\FWLIB\inc;..\HARDWARE\fourG;..\HARDWARE\mqtt;..\HARDWARE\usart1;..\HARDWARE\usart2;..\HARDWARE\HMAC\inc;..\HARDWARE\key;..\HARDWARE\tim3;..\HARDWARE\tim4;..\HARDWARE\commu;..\HARDWARE\led;..\HARDWARE\gcan600;..\HARDWARE\timer2;..\HARDWARE\usart3</IncludePath>
+              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\FWLIB\inc;..\HARDWARE\fourG;..\HARDWARE\mqtt;..\HARDWARE\usart1;..\HARDWARE\usart2;..\HARDWARE\HMAC\inc;..\HARDWARE\key;..\HARDWARE\tim3;..\HARDWARE\tim4;..\HARDWARE\commu;..\HARDWARE\led;..\HARDWARE\gcan600;..\HARDWARE\timer2;..\HARDWARE\usart3;..\HARDWARE\mygps;..\HARDWARE\uart4</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -459,6 +459,16 @@
               <FileName>usart3.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\usart3\usart3.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\uart4\uart4.c</FilePath>
+            </File>
+            <File>
+              <FileName>mygps.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\mygps\mygps.c</FilePath>
             </File>
           </Files>
         </Group>
