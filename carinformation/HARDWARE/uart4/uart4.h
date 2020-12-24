@@ -15,6 +15,7 @@
 #include "stdio.h"
 #include "stdint.h"
 #include "mygps.h"
+#include "stm32f4xx_it.h"
 #define UART4_TXBUFF_SIZE   1024   //定义串口4 发送缓冲区大小 1024字节
 #define UART4_RXBUFF_SIZE   1024              //定义串口4 接收缓冲区大小 1024字节
 extern unsigned int uart4_RxCounter;          //外部声明，其他文件可以调用该变量

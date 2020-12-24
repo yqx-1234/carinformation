@@ -13,13 +13,13 @@ void parseGpsBuffer()
 	char *subString;
 	char *subStringNext;  //存储当前帧中当前功能序和下一功能序内容
 	char i = 0;
-	if(Save_Data.isGetData){//接受数据是否完成
-		Save_Data.isGetData = false;
+	if(Save_Data2.isGetData){//接受数据是否完成
+		Save_Data2.isGetData = false;
 		printf("**************\r\n");
-		printf(Save_Data.GPS_Buffer); //打印帧数据
+		printf(Save_Data2.GPS_Buffer); //打印帧数据
 		for (i = 0 ; i <= 6 ; i++){
 			if (i == 0){
-				if ((subString = strstr(Save_Data.GPS_Buffer, ",")) == NULL) //是否找到间隔符","
+				if ((subString = strstr(Save_Data2.GPS_Buffer, ",")) == NULL) //是否找到间隔符","
 					errorLog(1);	//解析错误
 			}
 			else{
@@ -27,20 +27,20 @@ void parseGpsBuffer()
 				if ((subStringNext = strstr(subString, ",")) != NULL){
 					char usefullBuffer[2]; //储存有效性标志位，V:数据无效，A:数据有效
 					switch(i){
-						case 1:memcpy(Save_Data.UTCTime, subString, subStringNext - subString);break;	//获取UTC时间
+						case 1:memcpy(Save_Data2.UTCTime, subString, subStringNext - subString);break;	//获取UTC时间
 						case 2:memcpy(usefullBuffer, subString, subStringNext - subString);break;	//获取数据有效性标志
-						case 3:memcpy(Save_Data.latitude, subString, subStringNext - subString);break;	//获取纬度信息
-						case 4:memcpy(Save_Data.N_S, subString, subStringNext - subString);break;	//获取N/S
-						case 5:memcpy(Save_Data.longitude, subString, subStringNext - subString);break;	//获取经度信息
-						case 6:memcpy(Save_Data.E_W, subString, subStringNext - subString);break;	//获取E/W
+						case 3:memcpy(Save_Data2.latitude, subString, subStringNext - subString);break;	//获取纬度信息
+						case 4:memcpy(Save_Data2.N_S, subString, subStringNext - subString);break;	//获取N/S
+						case 5:memcpy(Save_Data2.longitude, subString, subStringNext - subString);break;	//获取经度信息
+						case 6:memcpy(Save_Data2.E_W, subString, subStringNext - subString);break;	//获取E/W
 						default:break;
 					}
 					subString = subStringNext;
-					Save_Data.isParseData = true;//解析数据标志位置位，表示数据解析完成
+					Save_Data2.isParseData = true;//解析数据标志位置位，表示数据解析完成
 					if(usefullBuffer[0] == 'A')
-						Save_Data.isUsefull = true;
+						Save_Data2.isUsefull = true;
 					else if(usefullBuffer[0] == 'V')
-						Save_Data.isUsefull = false;
+						Save_Data2.isUsefull = false;
 
 			}
 			else{
@@ -98,30 +98,30 @@ void mygps_Data(void){
 	char *temp_Data;
 	float i=17;
 	char temp_Buff[TBUFF_UNIT];
-if (Save_Data.isParseData){//判断数据是否解析完成
-		Save_Data.isParseData = false;
+if (Save_Data2.isParseData){//判断数据是否解析完成
+		Save_Data2.isParseData = false;
 		u1_printf("Save_Data.UTCTime = ");
-		u1_printf(Save_Data.UTCTime);
+		u1_printf(Save_Data2.UTCTime);
 		u1_printf("\r\n");
-		if(Save_Data.isUsefull){//判断数据是否有效
-			Save_Data.isUsefull = false;
+		if(Save_Data2.isUsefull){//判断数据是否有效
+			Save_Data2.isUsefull = false;
 			
 			u1_printf("Save_Data.latitude = ");//打印纬度
-			u1_printf(Save_Data.latitude);
+			u1_printf(Save_Data2.latitude);
 			u1_printf("\r\n");
-			sprintf(temp_Buff,"{\"method\":\"thing.event.property.post\",\"id\":\"203302322\",\"params\":{\"CarPower1\":%s},\"version\":\"1.0.0\"}",Save_Data.latitude);
+			sprintf(temp_Buff,"{\"method\":\"thing.event.property.post\",\"id\":\"203302322\",\"params\":{\"CarPower1\":%s},\"version\":\"1.0.0\"}",Save_Data2.latitude);
     	MQTT_PublishQs0(P_TOPIC_NAME,temp_Buff,strlen(temp_Buff));//打印纬度信息,后续需要修改
 			u1_printf("Save_Data.N_S = ");
-			u1_printf(Save_Data.N_S);     
+			u1_printf(Save_Data2.N_S);     
 			u1_printf("\r\n");
 
 			u1_printf("Save_Data.longitude = ");
-			u1_printf(Save_Data.longitude);//打印经度
+			u1_printf(Save_Data2.longitude);//打印经度
 			u1_printf("\r\n");
-			sprintf(temp_Buff,"{\"method\":\"thing.event.property.post\",\"id\":\"203302322\",\"params\":{\"CarPower1\":%s},\"version\":\"1.0.0\"}",Save_Data.longitude);
+			sprintf(temp_Buff,"{\"method\":\"thing.event.property.post\",\"id\":\"203302322\",\"params\":{\"CarPower1\":%s},\"version\":\"1.0.0\"}",Save_Data2.longitude);
     	MQTT_PublishQs0(P_TOPIC_NAME,temp_Buff,strlen(temp_Buff));//打印经度信息,后续需要修改
 			u1_printf("Save_Data.E_W = ");
-			u1_printf(Save_Data.E_W);
+			u1_printf(Save_Data2.E_W);
 			u1_printf("\r\n");
 		}
 		else{
