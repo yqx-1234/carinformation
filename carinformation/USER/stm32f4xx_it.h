@@ -41,8 +41,8 @@
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
-u8 data_Flag;
-extern _SaveData Save_Data;
+//u8 data_Flag1;//ри╣Ц
+extern struct SaveData Save_Data2;
 void NMI_Handler(void);
 void HardFault_Handler(void);
 void MemManage_Handler(void);

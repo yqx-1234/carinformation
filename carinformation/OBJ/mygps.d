@@ -42,5 +42,6 @@
 ..\obj\mygps.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\mygps.o: ..\HARDWARE\mygps\mygps.h
 ..\obj\mygps.o: ..\USER\stm32f4xx_it.h
+..\obj\mygps.o: ..\HARDWARE\uart4\uart4.h
 ..\obj\mygps.o: ..\HARDWARE\usart1\usart1.h
 ..\obj\mygps.o: ..\HARDWARE\mqtt\mqtt.h

@@ -20,7 +20,7 @@
 #define longitude_Length 12
 #define E_W_Length 2 
 
-typedef struct SaveData 
+struct SaveData 
 {
 	char GPS_Buffer[GPS_Buffer_Length];
 	char isGetData;		//是否获取到GPS数据
@@ -31,7 +31,7 @@ typedef struct SaveData
 	char longitude[longitude_Length];		//经度
 	char E_W[E_W_Length];		//E/W
 	char isUsefull;		//定位信息是否有效
-} _SaveData;
+};
 void parseGpsBuffer(void);
 //void printGpsBuffer(void);
 void mygps_Data(void);

@@ -80,7 +80,7 @@ void communication(void){
    								    TIM3_ENABLE_30S();                    //启动30s的PING定时器
 						          TIM_Cmd(TIM2,ENABLE);
 						          u1_printf("定时器2开启\r\n");     //定时器2开启,传感器数据处理开始
-									LED1_State();                         //判断开关状态，并发布给服务器  
+									//LED1_State();                         //判断开关状态，并发布给服务器  
 									break;                                //跳出分支                                             
 						default   : u1_printf("订阅失败，准备重启\r\n");  //串口输出信息 
 									Connect_flag = 0;                     //Connect_flag置零，重启连接
@@ -116,10 +116,10 @@ void communication(void){
 				u1_printf("命令:%s\r\n",&MQTT_CMDOutPtr[2]);                 //串口输出信息
 				if(strstr((char *)MQTT_CMDOutPtr+2,"\"params\":{\"PowerSwitch\":1}")){	       //如果搜索到"params":{"PowerSwitch":1}说明服务器下发打开开关1	
 					LED1_ON;                                                                   //打开LED1
-					LED1_State();                                                              //判断开关状态，并发布给服务器  
+					//LED1_State();                                                              //判断开关状态，并发布给服务器  
 				}else if(strstr((char *)MQTT_CMDOutPtr+2,"\"params\":{\"PowerSwitch\":0}")){   //如果搜索到"params":{"PowerSwitch":0}说明服务器下发关闭开关1
 					LED1_OFF;                                                                  //关闭LED1
-					LED1_State();                                                              //判断开关状态，并发布给服务器  
+					//LED1_State();                                                              //判断开关状态，并发布给服务器  
 				}
 				MQTT_CMDOutPtr += CBUFF_UNIT;                             	 //指针下移
 				if(MQTT_CMDOutPtr==MQTT_CMDEndPtr)           	             //如果指针到缓冲区尾部了

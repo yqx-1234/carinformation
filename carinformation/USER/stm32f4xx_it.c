@@ -62,7 +62,7 @@
 #include "uart4.h"
 #include "mygps.h"
 u16 point1;
-_SaveData Save_Data;
+struct SaveData Save_Data2;
 /*-------------------------------------------------*/
 /*函数名：串口2接收中断函数                        */
 /*参  数：无                                       */
@@ -127,9 +127,9 @@ void USART4_IRQHandler(void){
 	{
 		if(Res == '\n')									   
 		{
-			memset(Save_Data.GPS_Buffer, 0, GPS_Buffer_Length);      //清空
-			memcpy(Save_Data.GPS_Buffer, uart4_RxBuff, point1); 	//保存数据
-			Save_Data.isGetData = true;
+			memset(Save_Data2.GPS_Buffer, 0, GPS_Buffer_Length);      //清空
+			memcpy(Save_Data2.GPS_Buffer, uart4_RxBuff, point1); 	//保存数据
+			Save_Data2.isGetData = true;
 			point1 = 0;
 			memset(uart4_RxBuff, 0, UART4_RXBUFF_SIZE);      //清空				
 		}	
@@ -218,7 +218,7 @@ void TIM2_IRQHandler(void){
 		//if(k){
 		  GCAN600_Data();
 			usart3_RxCounter=0;
-			data_Flag=0;
+			//data_Flag1=0;
 		}
 		//else if(k){
 		/*else if(strstr(usart3_RxBuff,"PID13")==NULL){
@@ -234,7 +234,7 @@ void TIM2_IRQHandler(void){
     else{
       u1_printf("接收车速数据时发生错误\r\n");
 			GCAN600_Data();  //调试用
-      data_Flag=1;
+     // data_Flag1=1;
 		  usart3_RxCounter=0;
     }
 		
@@ -244,7 +244,7 @@ void TIM2_IRQHandler(void){
 				for(j=0;j<20000;j--);  //延时约0.5s
 		if(strstr(usart3_RxBuff,"PID05")){
 			GCAN600_Data();
-			data_Flag=0;
+			//data_Flag1=0;
 			usart3_RxCounter=0;
 		}
 		else if(strstr(usart3_RxBuff,"PID05")==0){
@@ -253,13 +253,13 @@ void TIM2_IRQHandler(void){
 				for(j=0;j<20000;j--);
 			if(strstr(usart3_RxBuff,"PID47")){
 				GCAN600_Data();
-				data_Flag=0;
+				//data_Flag1=0;
 				usart3_RxCounter=0;
 			}
    }
    else{
      u1_printf("接收冷却液温度数据时发生错误\r\n");	
-     data_Flag=1;
+     //data_Flag1=1;
    }		
 /*----------------读取汽车当前油量信息-------------*/	 
 		u3_printf("ATPID=47\r\n");
@@ -267,7 +267,7 @@ void TIM2_IRQHandler(void){
 				for(j=0;j<20000;j--);
 		if(strstr(usart3_RxBuff,"PID47")){
 			GCAN600_Data();
-			data_Flag=0;
+			//data_Flag1=0;
 			usart3_RxCounter=0;
 		}
 		else if(strstr(usart3_RxBuff,"PID05")==0){
@@ -276,13 +276,13 @@ void TIM2_IRQHandler(void){
 				for(j=0;j<20000;j--);
 			if(strstr(usart3_RxBuff,"PID47")){
 				GCAN600_Data();
-				data_Flag=0;
+			//	data_Flag1=0;
 				usart3_RxCounter=0;
 			}
    }
    else{
      u1_printf("接收数据错误\r\n");	
-     data_Flag=1;
+    // data_Flag1=1;
 		 usart3_RxCounter=0;
    }					 				 
   }
