@@ -21,7 +21,6 @@ int main(void)
 { 
  
 	delay_init(168);		  //初始化延时函数
-  	LED_Init();		        //初始化LED端口
 	Usart1_Init(9600);              //串口1功能初始化，波特率9600
 	Usart2_Init(115200);            //串口2功能初始化，波特率115200	
 	TIM4_Init(500,7200);            //TIM4初始化，定时时间 500*7200*1000/72000000 = 50ms
@@ -29,8 +28,6 @@ int main(void)
 	timer2_Enable_5s();
 	u1_printf("调试\r\n");
 	TIM_Cmd(TIM2,DISABLE);
-	LED_Init();	                    //LED初始化
-	KEY_Init();                     //按键初始化
 	fourG_ResetIO_Init();           //初始化4G模块的复位IO
 	AliIoT_Parameter_Init();	    //初始化连接阿里云IoT平台MQTT服务器的参数	
 	delay_ms(40000);

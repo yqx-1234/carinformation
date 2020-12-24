@@ -81,9 +81,8 @@ void MQTT_Buff_Init(void)
 	MQTT_RxSensorDataEndPtr=MQTT_RxSensorDataBuf[S_NUM-1];
 	
 
-    MQTT_ConectPack();                                //发送缓冲区添加连接报文
+  MQTT_ConectPack();                                //发送缓冲区添加连接报文
 	MQTT_Subscribe(S_TOPIC_NAME,0);	                  //发送缓冲区添加订阅topic，等级0	
-	
 	Ping_flag = ConnectPack_flag = SubcribePack_flag = 0;  //各个参数清零
 }
 /*----------------------------------------------------------*/

@@ -111,47 +111,19 @@ char fourG_callMode(int timeout)
 char fourG_Connect_Server(int timeout)
 {	
 	char a=0;
-	fourG_RxCounter=0;                               //WiFi接收数据量变量清零                        
-	memset(fourG_RX_BUF,0,fourG_RXBUFF_SIZE);         //清空WiFi接收缓冲区   
+	fourG_RxCounter=0;                              //WiFi接收数据量变量清零                        
+	memset(fourG_RX_BUF,0,fourG_RXBUFF_SIZE);       //清空WiFi接收缓冲区   
 	fourG_printf("AT+SOCKA=TCP,%s,%d\r\n",ServerIP,ServerPort);//发送连接服务器指令
 	while(timeout--){                               //等待超时与否
-		delay_ms(100);                              //延时100ms	
+		delay_ms(100);                                //延时100ms	
 		if(strstr(fourG_RX_BUF ,"aliyuncs"))          //如果接受到CONNECT表示连接成功
-			break; 		//跳出while循环
-		/*
-		if(strstr(fourG_RX_BUF ,"CLOSED"))           //如果接受到CLOSED表示服务器未开启
-			return 1;                               //服务器未开启返回1
-		if(strstr(fourG_RX_BUF ,"ALREADY CONNECTED"))//如果接受到ALREADY CONNECTED已经建立连接
-			return 2;                               //已经建立连接返回2
-		*/
+			break; 		                                  //跳出while循环
 		u1_printf("%d ",timeout);                   //串口输出现在的超时时间  
 	}
 	u1_printf("\r\n");                        //串口输出信息
 	if(timeout<=0)return 1;                   //超时错误，返回1
 	else
 	  return 0;
-	/*
-	else                                      //连接成功，准备进入透传
-	{
-		u1_printf("连接服务器成功，准备进入透传\r\n");  //串口显示信息
-		a=fourG_callMode(2);
-		
-		fourG_RxCounter=0;                               //WiFi接收数据量变量清零                        
-		memset(fourG_RX_BUF,0,fourG_RXBUFF_SIZE);         //清空WiFi接收缓冲区     
-		fourG_printf("AT+CIPSEND\r\n");                  //发送进入透传指令
-		while(timeout--){                               //等待超时与否
-			delay_ms(100);                              //延时100ms	
-			if(strstr(fourG_RX_BUF,"\r\nOK\r\n\r\n>"))   //如果成立表示进入透传成功
-				break;                          //跳出while循环
-			u1_printf("%d ",timeout);           //串口输出现在的超时时间  
-		}
-		if(timeout<=0)return 4;                 //透传超时错误，返回4	
-		
-	}
-	if(a==0)
-	  return 0;	                                //成功返回0	
-	*/
-
 }
 /*-------------------------------------------------*/
 /*函数名：fourG_commandMode                      */
@@ -178,25 +150,7 @@ char fourG_commandMode(int timeout)
 	return 0;                                   //正确返回0
 }
 
-/*-------------------------------------------------*/
-/*函数名：等待加入路由器                           */
-/*参  数：timeout：超时时间（1s的倍数）            */
-/*返回值：0：正确   其他：错误                     */
-/*-------------------------------------------------*/
-/*
-char WiFi_WaitAP(int timeout)
-{		
-	while(timeout--){                               //等待超时时间到0
-		delay_ms(1000);                             //延时1s
-		if(strstr(WiFi_RX_BUF,"WIFI GOT IP"))       //如果接收到WIFI GOT IP表示成功
-			break;       						    //主动跳出while循环
-		u1_printf("%d ",timeout);                   //串口输出现在的超时时间
-	}
-	u1_printf("\r\n");                              //串口输出信息
-	if(timeout<=0)return 1;                         //如果timeout<=0，说明超时时间到了，也没能收到WIFI GOT IP，返回1
-	return 0;                                       //正确，返回0
-}
-*/
+
 /*-------------------------------------------------*/
 /*函数名：4G连接服务器                           */
 /*参  数：无                                       */
@@ -221,75 +175,15 @@ char fourG_Connect_IoTServer(void)
 		return 3;                                      //返回1
 	}else u1_printf("成功进入AT指令模式\r\n");                   //串口提示数据
 	u1_printf("准备设置TCP连接\r\n");                  //串口提示数据
-	if(fourG_Connect_Server(50)){                //设置STA模式，100ms超时单位，总计5s超时时间
-		u1_printf("设置TCP连接失败，准备重启\r\n");    //返回非0值，进入if，串口提示数据
-		return 4;                                      //返回2
+	if(fourG_Connect_Server(50)){                      //设置STA模式，100ms超时单位，总计5s超时时间
+		u1_printf("设置TCP连接失败，准备重启\r\n");      //返回非0值，进入if，串口提示数据
+		return 4;                                        //返回2
 	}else u1_printf("设置TCP连接成功\r\n");            //串口提示数据
-	/*
-	if(wifi_mode==0){                                      //如果联网模式=0：SSID和密码写在程序里 
-		u1_printf("准备取消自动连接\r\n");                 //串口提示数据
-		if(WiFi_SendCmd("AT+CWAUTOCONN=0",50)){            //取消自动连接，100ms超时单位，总计5s超时时间
-			u1_printf("取消自动连接失败，准备重启\r\n");   //返回非0值，进入if，串口提示数据
-			return 3;                                      //返回3
-		}else u1_printf("取消自动连接成功\r\n");           //串口提示数据
-				
-		u1_printf("准备连接路由器\r\n");                   //串口提示数据	
-		if(WiFi_JoinAP(30)){                               //连接路由器,1s超时单位，总计30s超时时间
-			u1_printf("连接路由器失败，准备重启\r\n");     //返回非0值，进入if，串口提示数据
-			return 4;                                      //返回4	
-		}else u1_printf("连接路由器成功\r\n");             //串口提示数据			
-	}else{                                                 //如果联网模式=1：Smartconfig方式,用APP发送
-		if(KEY2_IN_STA==0){                                    //如果此时K2是按下的
-			u1_printf("准备设置自动连接\r\n");                 //串口提示数据
-			if(WiFi_SendCmd("AT+CWAUTOCONN=1",50)){            //设置自动连接，100ms超时单位，总计5s超时时间
-				u1_printf("设置自动连接失败，准备重启\r\n");   //返回非0值，进入if，串口提示数据
-				return 3;                                      //返回3
-			}else u1_printf("设置自动连接成功\r\n");           //串口提示数据	
-			
-			u1_printf("准备开启Smartconfig\r\n");              //串口提示数据
-			if(WiFi_SendCmd("AT+CWSTARTSMART",50)){            //开启Smartconfig，100ms超时单位，总计5s超时时间
-				u1_printf("开启Smartconfig失败，准备重启\r\n");//返回非0值，进入if，串口提示数据
-				return 4;                                      //返回4
-			}else u1_printf("开启Smartconfig成功\r\n");        //串口提示数据
-
-			u1_printf("请使用APP软件传输密码\r\n");            //串口提示数据
-			if(WiFi_Smartconfig(60)){                          //APP软件传输密码，1s超时单位，总计60s超时时间
-				u1_printf("传输密码失败，准备重启\r\n");       //返回非0值，进入if，串口提示数据
-				return 5;                                      //返回5
-			}else u1_printf("传输密码成功\r\n");               //串口提示数据
-
-			u1_printf("准备关闭Smartconfig\r\n");              //串口提示数据
-			if(WiFi_SendCmd("AT+CWSTOPSMART",50)){             //关闭Smartconfig，100ms超时单位，总计5s超时时间
-				u1_printf("关闭Smartconfig失败，准备重启\r\n");//返回非0值，进入if，串口提示数据
-				return 6;                                      //返回6
-			}else u1_printf("关闭Smartconfig成功\r\n");        //串口提示数据
-		}else{                                                 //反之，此时K2是没有按下
-			u1_printf("等待连接路由器\r\n");                   //串口提示数据	
-			if(WiFi_WaitAP(30)){                               //等待连接路由器,1s超时单位，总计30s超时时间
-				u1_printf("连接路由器失败，准备重启\r\n");     //返回非0值，进入if，串口提示数据
-				return 7;                                      //返回7	
-			}else u1_printf("连接路由器成功\r\n");             //串口提示数据					
-		}
-	}
-	*/
-	u1_printf("准备重启模块，进入透传模式\r\n");                     //串口提示数据
-	if(fourG_Reset(50)){               //设置透传，100ms超时单位，总计5s超时时间
+	u1_printf("准备重启模块，进入透传模式\r\n");       //串口提示数据
+	if(fourG_Reset(50)){                               //设置透传，100ms超时单位，总计5s超时时间
 		u1_printf("设置透传失败，准备重启\r\n");       //返回非0值，进入if，串口提示数据
 		return 5;                                      //返回8
 	}else u1_printf("设置透传成功\r\n");               //串口提示数据
-	/*
-	u1_printf("准备关闭多路连接\r\n");                 //串口提示数据
-	if(WiFi_SendCmd("AT+CIPMUX=0",50)){                //关闭多路连接，100ms超时单位，总计5s超时时间
-		u1_printf("关闭多路连接失败，准备重启\r\n");   //返回非0值，进入if，串口提示数据
-		return 9;                                      //返回9
-	}else u1_printf("关闭多路连接成功\r\n");           //串口提示数据
-	
-	u1_printf("准备连接服务器\r\n");                   //串口提示数据
-	if(WiFi_Connect_Server(100)){                      //连接服务器，100ms超时单位，总计10s超时时间
-		u1_printf("连接服务器失败，准备重启\r\n");     //返回非0值，进入if，串口提示数据
-		return 10;                                     //返回10
-	}else u1_printf("连接服务器成功\r\n");             //串口提示数据	
-	*/
 	return 0;                                          //正确返回0
 	
 }

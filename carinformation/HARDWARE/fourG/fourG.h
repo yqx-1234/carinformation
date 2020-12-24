@@ -13,13 +13,11 @@
 
 #define RESET_IO(x)    GPIO_WriteBit(GPIOA, GPIO_Pin_4, (BitAction)x)  //PA4控制WiFi的复位
 
-#define fourG_printf       u2_printf           //串口2控制 WiFi
-#define fourG_RxCounter    Usart2_RxCounter    //串口2控制 WiFi
-#define fourG_RX_BUF       Usart2_RxBuff       //串口2控制 WiFi
-#define fourG_RXBUFF_SIZE  USART2_RXBUFF_SIZE  //串口2控制 WiFi
+#define fourG_printf       u2_printf           //串口2控制 4G模块
+#define fourG_RxCounter    Usart2_RxCounter    //串口2控制 4G模块
+#define fourG_RX_BUF       Usart2_RxBuff       //串口2控制 4G模块
+#define fourG_RXBUFF_SIZE  USART2_RXBUFF_SIZE  //串口2控制 4G模块
 
-//#define SSID   "userCWDZ"                     //路由器SSID名称
-//#define PASS   "wc19871103.."                 //路由器密码
 
 void fourG_ResetIO_Init(void);
 char fourG_SendCmd(char *cmd, int timeout);

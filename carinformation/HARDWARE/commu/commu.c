@@ -122,10 +122,10 @@ void communication(void){
 					//LED1_State();                                                              //判断开关状态，并发布给服务器  
 				}
 				MQTT_CMDOutPtr += CBUFF_UNIT;                             	 //指针下移
-				if(MQTT_CMDOutPtr==MQTT_CMDEndPtr)           	             //如果指针到缓冲区尾部了
-					MQTT_CMDOutPtr = MQTT_CMDBuf[0];          	             //指针归位到缓冲区开头				
-			}//处理命令缓冲区数据的else if分支结尾	
-		}//Connect_flag=1的if分支的结尾
+				if(MQTT_CMDOutPtr==MQTT_CMDEndPtr)           	               //如果指针到缓冲区尾部了
+					MQTT_CMDOutPtr = MQTT_CMDBuf[0];          	               //指针归位到缓冲区开头				
+			}//处理命令缓冲区数据的else if分支结尾	 
+		}  //Connect_flag=1的if分支的结尾
 		
 		/*--------------------------------------------------------------------*/
 		/*      Connect_flag=0同服务器断开了连接,我们要重启连接服务器         */
@@ -135,9 +135,9 @@ void communication(void){
 			TIM_Cmd(TIM4,DISABLE);                           //关闭TIM4 
 			TIM_Cmd(TIM3,DISABLE);			//关闭TIM3 
       TIM_Cmd(TIM2,DISABLE);			//关闭TIM2
-			fourG_RxCounter=0;                                //WiFi接收数据量变量清零                        
-			memset(fourG_RX_BUF,0,fourG_RXBUFF_SIZE);          //清空WiFi接收缓冲区 
-			if(fourG_Connect_IoTServer()==0){   			     //如果WiFi连接云服务器函数返回0，表示正确，进入if
+			fourG_RxCounter=0;                                //4G模块接收数据量变量清零                        
+			memset(fourG_RX_BUF,0,fourG_RXBUFF_SIZE);          //清空4G模块接收缓冲区 
+			if(fourG_Connect_IoTServer()==0){   			     //如果4G模块连接云服务器函数返回0，表示正确，进入if
 				u1_printf("建立TCP连接成功\r\n");            //串口输出信息
 				Connect_flag = 1;                            //Connect_flag置1，表示连接成功	
 				fourG_RxCounter=0;                            //WiFi接收数据量变量清零                        
