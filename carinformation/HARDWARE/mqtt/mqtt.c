@@ -123,6 +123,10 @@ void AliIoT_Parameter_Init(void)
 /*参  数：无                                                */
 /*返回值：无                                                */
 /*----------------------------------------------------------*/
+
+
+
+
 void MQTT_ConectPack(void)
 {	
 	int temp,Remaining_len;

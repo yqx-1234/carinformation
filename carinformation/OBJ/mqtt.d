@@ -1,7 +1,7 @@
 ..\obj\mqtt.o: ..\HARDWARE\mqtt\mqtt.c
 ..\obj\mqtt.o: ..\USER\stm32f4xx.h
 ..\obj\mqtt.o: ..\CORE\core_cm4.h
-..\obj\mqtt.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\mqtt.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\mqtt.o: ..\CORE\core_cmInstr.h
 ..\obj\mqtt.o: ..\CORE\core_cmFunc.h
 ..\obj\mqtt.o: ..\CORE\core_cm4_simd.h
@@ -35,11 +35,11 @@
 ..\obj\mqtt.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\mqtt.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\mqtt.o: ..\HARDWARE\mqtt\mqtt.h
-..\obj\mqtt.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\string.h
-..\obj\mqtt.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\mqtt.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\string.h
+..\obj\mqtt.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\mqtt.o: ..\HARDWARE\usart1\usart1.h
-..\obj\mqtt.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\mqtt.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\mqtt.o: ..\HARDWARE\HMAC\inc\utils_hmac.h
-..\obj\mqtt.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\mqtt.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\mqtt.o: ..\HARDWARE\fourG\fourG.h
 ..\obj\mqtt.o: ..\HARDWARE\usart2\usart2.h

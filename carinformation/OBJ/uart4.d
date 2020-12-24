@@ -3,7 +3,7 @@
 ..\obj\uart4.o: ..\FWLIB\inc\misc.h
 ..\obj\uart4.o: ..\USER\stm32f4xx.h
 ..\obj\uart4.o: ..\CORE\core_cm4.h
-..\obj\uart4.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\uart4.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\uart4.o: ..\CORE\core_cmInstr.h
 ..\obj\uart4.o: ..\CORE\core_cmFunc.h
 ..\obj\uart4.o: ..\CORE\core_cm4_simd.h
@@ -37,9 +37,9 @@
 ..\obj\uart4.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\uart4.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\uart4.o: ..\SYSTEM\sys\sys.h
-..\obj\uart4.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\string.h
-..\obj\uart4.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdarg.h
-..\obj\uart4.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\uart4.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\string.h
+..\obj\uart4.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\uart4.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\uart4.o: ..\HARDWARE\mygps\mygps.h
 ..\obj\uart4.o: ..\HARDWARE\uart4\uart4.h
 ..\obj\uart4.o: ..\USER\stm32f4xx_it.h

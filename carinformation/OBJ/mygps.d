@@ -1,11 +1,11 @@
 ..\obj\mygps.o: ..\HARDWARE\mygps\mygps.c
 ..\obj\mygps.o: ..\HARDWARE\mygps\mygps.h
-..\obj\mygps.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\mygps.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\mygps.o: ..\USER\stm32f4xx_conf.h
 ..\obj\mygps.o: ..\FWLIB\inc\stm32f4xx_adc.h
 ..\obj\mygps.o: ..\USER\stm32f4xx.h
 ..\obj\mygps.o: ..\CORE\core_cm4.h
-..\obj\mygps.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\mygps.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\mygps.o: ..\CORE\core_cmInstr.h
 ..\obj\mygps.o: ..\CORE\core_cmFunc.h
 ..\obj\mygps.o: ..\CORE\core_cm4_simd.h
@@ -37,9 +37,9 @@
 ..\obj\mygps.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\mygps.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\mygps.o: ..\SYSTEM\sys\sys.h
-..\obj\mygps.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\string.h
+..\obj\mygps.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\mygps.o: ..\HARDWARE\uart4\uart4.h
-..\obj\mygps.o: D:\softwarenew\keil532\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\mygps.o: H:\software\keil5mdk\ARM\ARMCC\Bin\..\include\stdarg.h
 ..\obj\mygps.o: ..\HARDWARE\mygps\mygps.h
 ..\obj\mygps.o: ..\USER\stm32f4xx_it.h
 ..\obj\mygps.o: ..\HARDWARE\usart1\usart1.h
