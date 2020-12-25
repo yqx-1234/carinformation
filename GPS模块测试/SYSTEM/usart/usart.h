@@ -52,6 +52,7 @@ typedef struct SaveData
 
 
 void uart_init(u32 bound);
+void usart2_Init(u32 bound);
 extern char rxdatabufer;
 extern u16 point1;
 extern _SaveData Save_Data;

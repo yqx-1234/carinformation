@@ -93,35 +93,30 @@ void errorLog(int num)
 }
 
 void mygps_Data(void){
-	char *temp_Data;
-	float i=17;
 if (Save_Data.isParseData){//判断数据是否解析完成
 		Save_Data.isParseData = false;
-		u1_printf("Save_Data.UTCTime = ");
-		u1_printf(Save_Data.UTCTime);
-		u1_printf("\r\n");
+		printf("Save_Data.UTCTime = ");
+		printf(Save_Data.UTCTime);
+		printf("\r\n");
 		if(Save_Data.isUsefull){//判断数据是否有效
 			Save_Data.isUsefull = false;
 			
-			u1_printf("Save_Data.latitude = ");//打印纬度
-			u1_printf(Save_Data.latitude);
-			u1_printf("\r\n");
-			u1_printf("Save_Data.N_S = ");
-			u1_printf(Save_Data.N_S);     
-			u1_printf("\r\n");
+			printf("Save_Data.latitude = ");//打印纬度
+			printf(Save_Data.latitude);
+			printf("\r\n");
+			printf("Save_Data.N_S = ");
+			printf(Save_Data.N_S);     
+			printf("\r\n");
 
-			u1_printf("Save_Data.longitude = ");
-			u1_printf(Save_Data.longitude);//打印经度
-			u1_printf("\r\n");
-			u1_printf("Save_Data.E_W = ");
-			u1_printf(Save_Data.E_W);
-			u1_printf("\r\n");
+			printf("Save_Data.longitude = ");
+			printf(Save_Data.longitude);//打印经度
+			printf("\r\n");
+			printf("Save_Data.E_W = ");
+			printf(Save_Data.E_W);
+			printf("\r\n");
 		}
 		else{
-			u1_printf("GPS DATA is not usefull!\r\n");
-		}
-		
+			printf("GPS DATA is not usefull!\r\n");
+		}		
 	}	
-
-
 }
